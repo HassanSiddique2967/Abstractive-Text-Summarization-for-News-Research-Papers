@@ -19,25 +19,6 @@ A web-based text summarization tool built with **Flask** and **Hugging Face Tran
 
 ---
 
-## Project Structure
-
-Deep_Project/
-├── app.py # Flask app
-├── bart_summarizer.py # BART model loader and summarizer
-├── pegasus_summarizer.py # Pegasus model loader and summarizer
-├── t5_summarizer.py # T5 model loader and summarizer
-├── templates/
-│ └── index.html # Web frontend
-├── static/
-│ └── style.css # CSS styles
-├── t5_cnn_dailymail_finetuned/ # Fine-tuned T5 CNN model
-├── t5_pubmed_finetuned/ # Fine-tuned T5 PubMed model
-├── t5_xsum_finetuned/ # Fine-tuned T5 XSum model
-├── bart_finetuned_model/ # Fine-tuned BART model
-├── pegasus_finetuned_all/ # Fine-tuned Pegasus model
-
----
-
 ## Setup Instructions
 
 1. **Clone the repository**
