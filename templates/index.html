@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Summarization App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Text Summarization App</h2>
+        <form method="post">
+            <label for="article">Enter Text:</label>
+            <textarea name="article" rows="10" placeholder="Paste your article here..." required></textarea>
+
+            <label for="model">Select Model:</label>
+            <select name="model" onchange="toggleVariant(this.value)">
+                <option value="t5">T5</option>
+                <option value="bart">BART</option>
+                <option value="pegasus">Pegasus</option>
+            </select>
+
+            <div id="variant-select">
+                <label for="variant">T5 Variant:</label>
+                <select name="variant">
+                    <option value="cnn">CNN/DailyMail</option>
+                    <option value="pubmed">PubMed</option>
+                    <option value="xsum">XSum</option>
+                </select>
+            </div>
+
+            <button type="submit">Summarize</button>
+        </form>
+
+        {% if summary %}
+        <div class="summary">
+            <h3>Summary:</h3>
+            <p>{{ summary }}</p>
+        </div>
+        {% endif %}
+    </div>
+
+    <script>
+        function toggleVariant(model) {
+            const variantSection = document.getElementById("variant-select");
+            variantSection.style.display = model === "t5" ? "block" : "none";
+        }
+
+        window.onload = function () {
+            toggleVariant(document.querySelector("select[name='model']").value);
+        };
+    </script>
+</body>
+</html>

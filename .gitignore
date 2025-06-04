@@ -1,0 +1,11 @@
+# Ignore model folders
+t5_cnn_dailymail_finetuned/
+t5_pubmed_finetuned/
+t5_xsum_finetuned/
+pegasus_finetuned_all/
+bart_finetuned_all/
+bart_finetuned_model/
+visualizations/
+
+# Ignore virtual environment
+summarizer/
